@@ -79,6 +79,10 @@
             enctype: 'multipart/form-data',
             data: {},
             success: function (res) {
+                if(res.code === 401){
+                    layer.msg(res.msg,{icon:2,time:1500});
+                    return false;
+                }
                 if(callback === undefined){
                     callback = function (res) {
                         console.log(res);
