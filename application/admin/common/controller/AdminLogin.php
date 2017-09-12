@@ -51,9 +51,9 @@ class AdminLogin extends AdminBase
         }
 
         $role_id = user_info('role_id');
-//        if($role_id === 1){
-//            return true;
-//        }
+        if($role_id === 1){
+            return true;
+        }
 
         $exist = Db::name('role_node')->where('role_id',$role_id)->where('node_path',$path)->count();
 
