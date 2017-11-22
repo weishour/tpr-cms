@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>菜鸟教程(runoob.com)</title>
+    <script src="../public/src/plugs/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        var ws = new WebSocket("ws://test.cn:2346");
+        // 打开一个 web socket
+        ws.onopen = function()
+        {
+            // Web Socket 已连接上，使用 send() 方法发送数据
+            send();
+        };
+
+        ws.onmessage = function (evt)
+        {
+            var received_msg = evt.data;
+            console.log("接收数据:" + received_msg);
+        };
+
+        ws.onclose = function()
+        {
+            console.log("连接关闭")
+        };
+
+        function send() {
+            var data = $("#data").val();
+            ws.send(data);
+            console.log("发送数据" + data);
+        }
+    </script>
+
+</head>
+<body>
+
+<div id="sse">
+    <button onclick="send()" style="display: block">发送信息</button>
+    <br>
+    <label for="data">消息内容(json格式)</label><br>
+    <textarea id="data" style="width: 400px;height: 400px;">{"s":"index/index/index","params":{"a":"b"}}</textarea>
+</div>
+
+</body>
+</html>

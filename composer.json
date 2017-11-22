@@ -5,9 +5,7 @@
     "minimum-stability": "stable",
     "version": "2.0.0",
     "keywords": [
-        "restful",
-        "thinkphp",
-        "api"
+        "restful", "thinkphp", "api"
     ],
     "homepage": "https://github.com/AxiosCros/thinkphp5-restfulapi",
     "license": "Apache-2.0",
@@ -20,9 +18,10 @@
     "require": {
         "php": ">=7.0",
         "topthink/think-captcha": "^1.0",
-        "axios/tpr-framework": "^1.0",
+        "axios/tpr-framework": "^1.1",
         "johnlui/aliyun-oss":"^2.2",
-        "php-amqplib/php-amqplib": "^2.6"
+        "php-amqplib/php-amqplib": "^2.6",
+        "workerman/workerman": "^3.5"
     },
     "require-dev": {
         "composer/composer": "1.0.*@dev"

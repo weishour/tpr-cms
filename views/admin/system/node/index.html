@@ -33,7 +33,7 @@
             method: 'post',
             page: true,
             limits: [10 , 15, 30, 50, 100],
-            limit: 12,
+            limit: 100,
             loading: false,
             cols: cols
         });
@@ -41,6 +41,6 @@
 
 </script>
 <script type="text/html" id="operationTpl">
-    <a class="layui-btn layui-btn-primary layui-btn-mini" lay-event="auth">分配权限</a>
-    <a class="layui-btn layui-btn-danger layui-btn-mini" lay-event="del">删除</a>
+    <a class="layui-btn layui-btn-primary layui-btn-sm" lay-event="auth">分配权限</a>
+    <a class="layui-btn layui-btn-danger layui-btn-sm" lay-event="del">删除</a>
 </script>

@@ -40,6 +40,9 @@
 
 * **多应用多入口**的架构模式，更易于多端接口的开发维护工作
 
+* 集成**workman**，实现长连接通信
+
+* 集成**geaqrman**，实现cgi模式到cli模式的转换
 
 ## 安装
 ``` shell
@@ -77,14 +80,50 @@ vim .env
  
  > [http://cms.hanxv.cn](http://cms.hanxv.cn)
  
- > admin
+ > test
  
  > 123456
  
+ ## workman
+ > 需要tpr-framework > 1.1.6
  
-## 预览
-
-![demo](public/demo.gif)
+ ``` shell
+ cd server/bin
+ 
+ #以debug（调试）方式启动
+ 
+ php workman_server.php start
+ 
+ #以daemon（守护进程）方式启动
+ 
+ php workman_server.php start -d
+ 
+ #停止
+ php workman_server.php stop
+ 
+ #重启
+ php workman_server.php restart
+ 
+ #平滑重启
+ php workman_server.php reload
+ 
+ #查看状态
+ php workman_server.php status
+ 
+ #查看连接状态（需要Workerman版本>=3.5.0）
+ php workman_server.php connections
+ ```
+ 
+ ## gearman
+  > 需要tpr-framework > 1.1.6
+  
+ ``` shell
+ cd server/bin
+ sh gearman_run.sh 1
+ #数字1为创建一个gearman worker
+ 
+ ```
+ 
 
 ## 开源协议
 > 遵循Apache2开源协议发布，并提供免费使用
